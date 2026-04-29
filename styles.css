@@ -1,0 +1,142 @@
+@layer reset {
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Prevent font size inflation */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  /* Remove default margin in favour of better control in authored CSS */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin-block-end: 0;
+  }
+
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role="list"],
+  ol[role="list"] {
+    list-style: none;
+  }
+
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  /* Set shorter line heights on headings and interactive elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  /* Balance text wrapping on headings */
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+  }
+
+  /* Make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  /* Make sure textareas without a rows attribute are not tiny */
+  textarea:not([rows]) {
+    min-height: 10em;
+  }
+
+  /* Anything that has been anchored to should have extra scroll margin */
+  :target {
+    scroll-margin-block: 5ex;
+  }
+}
+
+@layer base {
+  :root {
+    --clr-white: hsla(0, 0%, 100%, 1);
+    --clr-gray-100: hsla(0, 2%, 79%, 1);
+    --clr-brand-400: hsla(25, 88%, 75%, 1);
+    --clr-brand-500: hsla(25, 88%, 66%, 1);
+    --clr-green-400: hsla(143, 19%, 49%, 1);
+    --clr-green-500: hsla(143, 38%, 37%, 1);
+    --clr-green-600: hsla(144, 30%, 20%, 1);
+    --clr-brown-500: hsla(10, 5%, 25%, 1);
+    --clr-brown-600: hsla(9, 7%, 21%, 1);
+    --clr-brown-700: hsla(9, 8%, 16%, 1);
+    --clr-brown-800: hsla(0, 6%, 15%, 1);
+    --clr-brown-900: hsla(0, 6%, 13%, 1);
+
+    --clr-orange-500: hsla(28, 43%, 37%, 1);
+    --clr-red-500: hsla(359, 34%, 37%, 1);
+    --clr-teal-500: hsla(186, 42%, 37%, 1);
+
+    --ff-heading: "Fira Sans", sans-serif;
+    --ff-body: "Outfit", sans-serif: ;
+
+    --fs-300: 0.875rem;
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.25rem;
+    --fs-700: 1.5rem;
+    --fs-800: 2rem;
+    --fs-900: 3.75rem;
+    --fs-1000: 3.75rem;
+
+    @media (width > 760px) {
+      --fs-300: 0.875rem;
+      --fs-400: 1rem;
+      --fs-500: 1.25rem;
+      --fs-600: 1.5rem;
+      --fs-700: 2rem;
+      --fs-800: 3rem;
+      --fs-900: 5rem;
+      --fs-1000: 7.5rem;
+    }
+  }
+}
+
+body {
+  font-size: var(--fs-600);
+  font-family: var(--ff-body);
+  color: var(--clr-brown-500);
+}
